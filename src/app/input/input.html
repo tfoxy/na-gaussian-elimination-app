@@ -1,0 +1,98 @@
+<form name="inputForm"
+      ng-submit="inputCtrl.submit()"
+      ng-keydown="inputCtrl.keydownListener($event)"
+      class="input-view"
+  >
+
+  <matrix-input ctrl="::inputCtrl.matrixCtrl"
+                input-name-prefix="matrix"
+                value-parser="::inputCtrl.valueParser"
+                default-matrix-size="::[3, 4]"
+                class="augmented-matrix-table"
+    ></matrix-input>
+
+  <div class="form-group form-inline">
+    <label>
+      Pivoting method
+      <select name="pivoting"
+              class="form-control input-sm"
+              ng-model="inputCtrl.data.form.pivoting"
+              ng-options="name for name in inputCtrl.data.pivotingMethodNames"
+              ng-change="inputCtrl.data.pivotingChanged()"
+        ></select>
+    </label>
+  </div>
+
+  <div class="form-group form-inline">
+    Number type
+    <label class="radio-inline">
+      <input type="radio"
+             ng-model="inputCtrl.data.form.numberType"
+             value="fraction"
+             name="exactPrecision"
+             ng-change="inputCtrl.data.numberTypeChanged()">
+      fraction
+    </label>
+
+    <label class="radio-inline">
+      <input type="radio"
+             ng-model="inputCtrl.data.form.numberType"
+             value="decimal"
+             name="decimalPrecision"
+             ng-change="inputCtrl.data.numberTypeChanged()">
+      decimal
+    </label>
+  </div>
+
+  <div class="form-group form-inline">
+    <label>
+      Precision
+      <input type="number"
+             class="form-control input-sm"
+             placeholder="{{inputCtrl.data.defaultPrecision}}"
+             ng-model="inputCtrl.data.form.precision"
+             name="decimalPrecisionNumber"
+             ng-change="inputCtrl.data.numberTypeChanged()"
+             ng-disabled="inputCtrl.data.form.numberType !== 'decimal'"
+             min="1"
+             pu-elastic-input
+        >
+    </label>
+
+    <label>
+      with rounding mode
+      <select name="roundingMode"
+              class="form-control input-sm"
+              ng-model="inputCtrl.data.form.roundingMode"
+              ng-options="name for name in inputCtrl.data.roundingModeNames"
+              ng-change="inputCtrl.data.numberTypeChanged()"
+              ng-disabled="inputCtrl.data.form.numberType !== 'decimal'"
+        ></select>
+    </label>
+  </div>
+
+
+  <div class="form-group form-inline">
+    Fill lower triangle with
+    <label class="radio-inline">
+      <input type="radio"
+             name="luFlagFalse"
+             ng-model="inputCtrl.data.form.luFlag"
+             ng-value="false"
+             ng-change="inputCtrl.data.luFlagChanged()"
+        >
+      zeroes
+    </label>
+    <label class="radio-inline">
+      <input type="radio"
+             name="luFlagTrue"
+             ng-model="inputCtrl.data.form.luFlag"
+             ng-value="true"
+             ng-change="inputCtrl.data.luFlagChanged()"
+        >
+      LU values
+    </label>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Solve</button>
+</form>

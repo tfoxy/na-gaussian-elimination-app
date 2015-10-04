@@ -1,0 +1,23 @@
+<span class="steps-view">
+  <div ng-repeat="step in stepsCtrl.steps" ng-switch="step.type" class="solution-step">
+    <span ng-switch-when="matrix">
+      <span katex-bind="::step.matrixLatex"></span>
+    </span>
+    <span ng-switch-when="elimination">
+      <span katex-bind="::step.matrixLatex"></span>
+      <span katex-bind="::step.mCoefficientEquation"></span>
+    </span>
+    <span ng-switch-when="equation">
+      <span katex-bind="::step.equation"></span>
+    </span>
+    <span ng-switch-when="swapRows">
+      <span katex-bind="::step.matrixLatex"></span>
+      <span>Swap rows {{::step.i+1}} and {{::step.j+1}}</span>
+    </span>
+    <span ng-switch-when="swapColumns">
+      <span katex-bind="::step.matrixLatex"></span>
+      <span katex-bind="::step.solutionLatex"></span>
+      <span>Swap columns {{::step.i+1}} and {{::step.j+1}}</span>
+    </span>
+  </div>
+</span>

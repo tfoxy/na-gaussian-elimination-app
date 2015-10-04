@@ -1,0 +1,25 @@
+.matrix-table {
+  border: 2px solid #555;
+  border-radius: 10px/40px;
+  padding: 8px;
+  display: inline-block;
+  border-top: none;
+  border-bottom: none;
+}
+
+.augmented-matrix-table td:last-child {
+  border-left: 1px dashed #555;
+}
+
+.matrix-table input {
+  min-width: 100%;
+  border-radius: 0;
+  padding: 2px 5px;
+  height: 26px;
+  text-align: right;
+}
+
+.matrix-table > tbody > tr > td {
+  min-width: 50px;
+  padding: 2px;
+}

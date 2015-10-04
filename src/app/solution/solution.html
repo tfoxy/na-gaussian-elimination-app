@@ -1,0 +1,9 @@
+<span class="solution-view">
+  <div katex-bind="solutionCtrl.latexSolution"></div>
+  <p ng-if="solutionCtrl.infiniteSolutions" class="text-info">
+    This is one of the infinite solutions for the system
+  </p>
+  <p ng-if="solutionCtrl.solutionError" class="text-danger">
+    {{solutionCtrl.solutionError.message || solutionCtrl.solutionError}}
+  </p>
+</span>
