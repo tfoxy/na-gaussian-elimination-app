@@ -8,5 +8,7 @@ var ghPages = require('gulp-gh-pages');
 
 gulp.task('deploy', function() {
   return gulp.src(path.join(conf.paths.dist, '/**/*'))
-    .pipe(ghPages());
+    .pipe(ghPages({
+      push: false
+    }));
 });
