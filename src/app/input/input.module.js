@@ -15,7 +15,7 @@ let module = angular.module('naGaussianEliminationApp.input', [
   gaussianEliminationModule.name,
   numbersModule.name
 ])
-  .controller(InputController.name, InputController)
+  .controller('InputController', InputController)
   .service('inputData', Input);
 
 export default module;

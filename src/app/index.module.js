@@ -23,8 +23,8 @@ let app = angular.module('naGaussianEliminationApp', [
 ])
   .config(config)
   .config(routerConfig)
-  .controller(MainController.name, MainController)
-  .controller(SolutionController.name, SolutionController)
-  .controller(StepsController.name, StepsController);
+  .controller('MainController', MainController)
+  .controller('SolutionController', SolutionController)
+  .controller('StepsController', StepsController);
 
 export default app;
