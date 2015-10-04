@@ -18,7 +18,7 @@ class MatrixTableController {
 
   keyListener($event, scope) {
     let element = $event.target;
-    let preventDefault = true;
+    let preventDefault = false;
 
     if ($event.ctrlKey || $event.shiftKey || $event.altKey || $event.metaKey) {
       return;
@@ -29,10 +29,12 @@ class MatrixTableController {
       case key.LEFT:
         if (MatrixTableController._hasCaretAtStart(element)) {
           this._focusRelativeInput(scope, 0, -1);
+          preventDefault = true;
         }
         break;
       case key.UP:
         this._focusRelativeInput(scope, -1, 0);
+        preventDefault = true;
         break;
       case key.SPACE:
       case key.RIGHT:
@@ -45,6 +47,7 @@ class MatrixTableController {
           } else {
             this._focusRelativeInput(scope, 0, 1);
           }
+          preventDefault = true;
         }
         break;
       case key.DOWN:
@@ -56,6 +59,7 @@ class MatrixTableController {
         } else {
           this._focusRelativeInput(scope, 1, 0);
         }
+        preventDefault = true;
         break;
       case key.ENTER:
         if (this._isLastRow(scope)) {
@@ -66,9 +70,7 @@ class MatrixTableController {
         } else {
           this._focusNextRowFirstInput(scope);
         }
-        break;
-      default:
-        preventDefault = false;
+        preventDefault = true;
     }
 
     if (preventDefault) {
