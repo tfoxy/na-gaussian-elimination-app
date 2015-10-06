@@ -1,4 +1,8 @@
 {
+  "rules": {
+    "angular/definedundefined": 0,
+    "no-var": 0
+  },
   "env": {
     "node": true
   }

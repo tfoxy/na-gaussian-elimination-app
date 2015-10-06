@@ -1,6 +1,7 @@
 'use strict';
 
-/* jshint node: true */
+/* global require process */
+/* eslint no-var: 0 */
 
 var path = require('path');
 var conf = require('./gulp/conf');
@@ -43,9 +44,9 @@ module.exports = function(config) {
       'chai-sinon'
     ],
 
-    browsers : ['PhantomJS'],
+    browsers: ['PhantomJS'],
 
-    plugins : [
+    plugins: [
       'karma-phantomjs-launcher',
       'karma-coverage',
       'karma-mocha',
@@ -55,8 +56,8 @@ module.exports = function(config) {
     ],
 
     coverageReporter: {
-      type : 'html',
-      dir : 'coverage/'
+      type: 'html',
+      dir: 'coverage/'
     },
 
     reporters: ['mocha', 'coverage']

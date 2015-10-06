@@ -4,6 +4,9 @@
  *  because putting all here was really too long
  */
 
+/* global require */
+/* eslint no-var: 0 */
+
 'use strict';
 
 var gulp = require('gulp');

@@ -9,14 +9,14 @@ var $ = require('gulp-load-plugins')();
 var wiredep = require('wiredep').stream;
 var _ = require('lodash');
 
-gulp.task('inject', ['scripts'], function () {
+gulp.task('inject', ['scripts'], function() {
   var injectStyles = gulp.src([
     path.join(conf.paths.src, '/app/**/*.css')
-  ], { read: false });
+  ], {read: false});
 
   var injectScripts = gulp.src([
     path.join(conf.paths.tmp, '/serve/app/**/*.module.js')
-  ], { read: false });
+  ], {read: false});
 
   var injectOptions = {
     ignorePath: [conf.paths.src, path.join(conf.paths.tmp, '/serve')],
