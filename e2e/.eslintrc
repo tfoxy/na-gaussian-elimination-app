@@ -1,4 +1,11 @@
 {
+  "rules": {
+    "angular/angularelement": 0,
+    "no-var": 0
+  },
+  "env": {
+    "node": true
+  },
   "globals": {
     "browser": false,
     "element": false,

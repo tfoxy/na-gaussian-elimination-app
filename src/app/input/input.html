@@ -7,7 +7,7 @@
   <matrix-input ctrl="::inputCtrl.matrixCtrl"
                 input-name-prefix="matrix"
                 value-parser="::inputCtrl.valueParser"
-                default-matrix-size="::[3, 4]"
+                default-matrix-size="[3, 4]"
                 class="augmented-matrix-table"
     ></matrix-input>
 
@@ -29,7 +29,7 @@
       <input type="radio"
              ng-model="inputCtrl.data.form.numberType"
              value="fraction"
-             name="exactPrecision"
+             name="exactNumberType"
              ng-change="inputCtrl.data.numberTypeChanged()">
       fraction
     </label>
@@ -38,7 +38,7 @@
       <input type="radio"
              ng-model="inputCtrl.data.form.numberType"
              value="decimal"
-             name="decimalPrecision"
+             name="decimalNumberType"
              ng-change="inputCtrl.data.numberTypeChanged()">
       decimal
     </label>
@@ -81,7 +81,7 @@
              ng-value="false"
              ng-change="inputCtrl.data.luFlagChanged()"
         >
-      zeroes
+      zeros
     </label>
     <label class="radio-inline">
       <input type="radio"

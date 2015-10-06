@@ -8,4 +8,4 @@ before_script:
 - npm install -g bower json
 - bower install
 - chromium-browser --version
-- json -I -f node_modules/protractor/config.json -e 'this.webdriverVersions.chromedriver = "2.12"'
+- json -I -f node_modules/gulp-protractor/node_modules/protractor/config.json -e 'this.webdriverVersions.chromedriver = "2.12"'
