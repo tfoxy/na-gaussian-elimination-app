@@ -4,7 +4,7 @@
   "description": "Application that solves systems of linear equations",
   "dependencies": {},
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test && gulp protractor:dist"
   },
   "repository": {
     "type": "git",
