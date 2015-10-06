@@ -85,7 +85,7 @@ class MatrixTableController {
   }
 
   addRow() {
-    let rowLength = this.matrix[0].length;
+    let rowLength = this.matrix.length > 0 ? this.matrix[0].length : 0;
     let row = [];
     for (let i = 0; i < rowLength; i++) {
       row.push({value: ''});

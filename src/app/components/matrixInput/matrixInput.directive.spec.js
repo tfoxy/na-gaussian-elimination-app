@@ -1,7 +1,10 @@
 import matrixInputModule from './matrixInput.module';
 
-describe('matrixInput', () => {
+describe('matrixInput', function() {
   let scope, compileAndDigest, bodyElements;
+
+  // Sometimes a random test takes longer than 2000 ms
+  this.timeout(5000);
 
   beforeEach(angular.mock.module(matrixInputModule.name));
 
@@ -117,7 +120,7 @@ describe('matrixInput', () => {
 
         scope.ctrl.increaseMatrix();
 
-        expect(scope.ctrl.tableMatrix[0].length).to.equal(initialLength + 1);
+        expect(scope.ctrl.tableMatrix[0]).to.have.length(initialLength + 1);
       });
 
       it('adds a row', () => {
@@ -128,7 +131,18 @@ describe('matrixInput', () => {
 
         scope.ctrl.increaseMatrix();
 
-        expect(scope.ctrl.tableMatrix.length).to.equal(initialLength + 1);
+        expect(scope.ctrl.tableMatrix).to.have.length(initialLength + 1);
+      });
+
+      it('adds a cell when the table is empty', () => {
+        scope.m = [];
+        let t = '<matrix-input ctrl="ctrl" initial-matrix="::m"></matrix-input>';
+        compileAndDigest(t);
+
+        scope.ctrl.increaseMatrix();
+
+        expect(scope.ctrl.tableMatrix).to.have.length(1, 'rows.length');
+        expect(scope.ctrl.tableMatrix[0]).to.have.length(1, 'rows[0].length');
       });
 
     });
@@ -143,7 +157,7 @@ describe('matrixInput', () => {
 
         scope.ctrl.decreaseMatrix();
 
-        expect(scope.ctrl.tableMatrix.length).to.equal(initialLength - 1);
+        expect(scope.ctrl.tableMatrix).to.have.length(initialLength - 1);
       });
 
       it('pops a row', () => {
@@ -154,7 +168,7 @@ describe('matrixInput', () => {
 
         scope.ctrl.decreaseMatrix();
 
-        expect(scope.ctrl.tableMatrix.length).to.equal(initialLength - 1);
+        expect(scope.ctrl.tableMatrix).to.have.length(initialLength - 1);
       });
 
     });
