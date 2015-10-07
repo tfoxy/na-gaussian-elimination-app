@@ -57,7 +57,8 @@ module.exports = function(config) {
 
     coverageReporter: {
       type: 'html',
-      dir: 'coverage/'
+      dir: 'coverage/',
+      reporters: [{type: 'lcov'}]
     },
 
     reporters: ['mocha', 'coverage']
