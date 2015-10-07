@@ -58,7 +58,7 @@
     "key-spacing": 2,
     "max-depth": [2, 5],
     "max-len": [1, 120, 4],
-    "max-nested-callbacks": [2, 3],
+    "max-nested-callbacks": [2, 5],
     "new-cap": 2,
     "no-array-constructor": 2,
     "no-lonely-if": 2,

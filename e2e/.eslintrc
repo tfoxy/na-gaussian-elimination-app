@@ -1,6 +1,7 @@
 {
   "rules": {
     "angular/angularelement": 0,
+    "angular/no-private-call": 0,
     "no-var": 0
   },
   "env": {
@@ -11,6 +12,7 @@
     "element": false,
     "by": false,
     "$": false,
-    "$$": false
+    "$$": false,
+    "protractor": false
   }
 }

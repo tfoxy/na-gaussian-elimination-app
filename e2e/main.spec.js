@@ -1,9 +1,8 @@
 describe('The main view', function() {
-  var page;
+  var page = require('./main.po');
 
   beforeEach(function() {
-    browser.get('/index.html');
-    page = require('./main.po');
+    page.load();
   });
 
   it('should include a form', function() {
