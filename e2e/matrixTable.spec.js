@@ -1,5 +1,6 @@
 describe('matrix table', function() {
   var page = require('./main.po');
+  var myEC = require('./myExpectedConditions');
 
   beforeEach(function() {
     page.load();
@@ -15,32 +16,21 @@ describe('matrix table', function() {
 
   describe('input', function() {
 
-    // TODO use wait instead of sleep
-    xit('turns red when an invalid character is typed', function() {
+    it('changes color when focused, when it has an invalid value, and when a valid value is restored', function() {
       var input = page.getMatrixTableInput(0, 0);
-      var initialBorderColor = input.getCssValue('border-color');
-      input.sendKeys('@');
-      // Wait for css value to change
-      browser.driver.sleep(1000).then(function() {
-        var borderColor = input.getCssValue('border-color');
-        expect(borderColor).not.toBe(initialBorderColor);
-      });
-    });
+      var ec, ecFn = input.getCssValue.bind(input, 'border-color');
 
-    // TODO use wait instead of sleep
-    xit('goes back to normal when the invalid character is removed', function() {
-      var input = page.getMatrixTableInput(0, 0);
-      var initialBorderColor = input.getCssValue('border-color');
+      ec = myEC.toChange(ecFn);
+      input.sendKeys('1');
+      browser.driver.wait(ec, 10000, 'Focus does not change input border color');
+
+      ec = myEC.toChange(ecFn);
       input.sendKeys('@');
-      // Wait for css value to change
-      browser.driver.sleep(1000).then(function() {
-        input.sendKeys(protractor.Key.BACK_SPACE);
-        // Wait for css value to change
-        return browser.driver.sleep(2500);
-      }).then(function() {
-        var borderColor = input.getCssValue('border-color');
-        expect(borderColor).toBe(initialBorderColor);
-      });
+      browser.driver.wait(ec, 5000, 'Invalid value does not change input border color');
+
+      ec = myEC.toChange(ecFn);
+      input.sendKeys(protractor.Key.BACK_SPACE);
+      browser.driver.wait(ec, 5000, 'Valid value does not change input border color');
     });
 
     it('focuses on the next input when space is pressed', function() {
@@ -49,7 +39,6 @@ describe('matrix table', function() {
       input.sendKeys(protractor.Key.SPACE);
       var focusedInput = browser.driver.switchTo().activeElement();
       focusedInput.sendKeys('34');
-      expect(input.getAttribute('value')).toBe('12');
       expect(page.getMatrixTableInput(1, 2).getAttribute('value')).toBe('34');
     });
 
@@ -70,36 +59,30 @@ describe('matrix table', function() {
       });
     });
 
-    // FIXME
-    xit('focuses on the next input when a column is added with the right arrow key', function() {
+    it('focuses on the next input when a column is added with the right arrow key', function() {
       var input = page.getMatrixTableInput(1, -1);
       input.sendKeys('12');
       input.sendKeys(protractor.Key.ARROW_RIGHT);
       var focusedInput = browser.driver.switchTo().activeElement();
       focusedInput.sendKeys('34');
-      expect(input.getAttribute('value')).toBe('12');
-      expect(page.getMatrixTableInput(1, -1).getAttribute('value')).toBe('34');
+      expect(input.getAttribute('value')).toBe('34');
     });
 
-    // FIXME
-    xit('focuses on the input below when a row is added with the down arrow key', function() {
+    it('focuses on the input below when a row is added with the down arrow key', function() {
       var input = page.getMatrixTableInput(-1, 1);
       input.sendKeys('12');
       input.sendKeys(protractor.Key.ARROW_DOWN);
       var focusedInput = browser.driver.switchTo().activeElement();
       focusedInput.sendKeys('34');
-      expect(input.getAttribute('value')).toBe('12');
-      expect(page.getMatrixTableInput(-1, 1).getAttribute('value')).toBe('34');
+      expect(input.getAttribute('value')).toBe('34');
     });
 
-    // FIXME
-    xit('focuses on the first input of the newly added row when enter key is pressed', function() {
+    it('focuses on the first input of the newly added row when enter key is pressed', function() {
       var input = page.getMatrixTableInput(-1, 1);
       input.sendKeys('12');
       input.sendKeys(protractor.Key.ENTER);
       var focusedInput = browser.driver.switchTo().activeElement();
       focusedInput.sendKeys('34');
-      expect(input.getAttribute('value')).toBe('12');
       expect(page.getMatrixTableInput(-1, 0).getAttribute('value')).toBe('34');
     });
 
