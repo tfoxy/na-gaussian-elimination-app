@@ -14,8 +14,6 @@
     "by": false,
     "$": false,
     "$$": false,
-    "protractor": false,
-    "iit": false,
-    "ddescribe": false
+    "protractor": false
   }
 }

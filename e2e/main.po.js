@@ -11,6 +11,7 @@ function MainPage() {
   this.matrixInput = this.form.$('matrix-input');
   this.matrixTable = this.matrixInput.$('matrix-table');
   this.matrixTableRows = this.matrixTable.$$('tr');
+  this.matrixTableInputs = this.matrixTable.$$('input');
   this.matrixTextarea = this.matrixInput.$('textarea');
   this.matrixButtons = {
     cells: this.matrixInput.$('button[name="matrixToggleCellsButton"]'),
@@ -27,17 +28,24 @@ function MainPage() {
   this.zerosRadio = this.form.$('select[name="luFlagFalse"]');
   this.luRadio = this.form.$('select[name="luFlagTrue"]');
   this.submitButton = this.form.$('button[type="submit"]');
+
+  this.solutionEquation = this.solutionView.$('.solution-equation');
 }
 
+MainPage.prototype.getActiveElement = getActiveElement;
 MainPage.prototype.getMatrixTableInput = getMatrixTableInput;
-MainPage.prototype.load = load;
+MainPage.prototype.navigate = navigate;
 
 function getMatrixTableInput(i, j) {
   return this.matrixTable.$$('tr').get(i).$$('input').get(j);
 }
 
-function load() {
+function navigate() {
   browser.get('/index.html');
+}
+
+function getActiveElement() {
+  return browser.driver.switchTo().activeElement();
 }
 
 module.exports = new MainPage();
