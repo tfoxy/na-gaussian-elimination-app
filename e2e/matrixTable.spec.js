@@ -22,7 +22,7 @@ describe('matrix table', function() {
 
       ec = myEC.toChange(ecFn);
       input.sendKeys('1');
-      browser.driver.wait(ec, 10000, 'Focus does not change input border color');
+      browser.driver.wait(ec, 20000, 'Focus does not change input border color');
 
       ec = myEC.toChange(ecFn);
       input.sendKeys('@');
@@ -52,7 +52,7 @@ describe('matrix table', function() {
 
     it('adds a column when right arrow key is pressed on the last column', function() {
       var input = page.getMatrixTableInput(1, -1);
-      var firstRow = page.matrixTable.$$('tr').get(0);
+      var firstRow = page.matrixTableRows.get(0);
       firstRow.$$('input').count().then(function(firstRowInputCount) {
         input.sendKeys(protractor.Key.ARROW_RIGHT);
         expect(firstRow.$$('input').count()).toBe(firstRowInputCount + 1);

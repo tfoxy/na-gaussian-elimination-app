@@ -8,12 +8,21 @@ function MainPage() {
   this.solutionView = $('.solution-view');
   this.stepsView = $('.steps-view');
 
-  this.matrixTable = this.form.$('matrix-table');
+  this.matrixInput = this.form.$('matrix-input');
+  this.matrixTable = this.matrixInput.$('matrix-table');
+  this.matrixTableRows = this.matrixTable.$$('tr');
+  this.matrixTextarea = this.matrixInput.$('textarea');
+  this.matrixButtons = {
+    cells: this.matrixInput.$('button[name="matrixToggleCellsButton"]'),
+    clear: this.matrixInput.$('button[name="matrixClearButton"]'),
+    increase: this.matrixInput.$('button[name="matrixIncreaseButton"]'),
+    decrease: this.matrixInput.$('button[name="matrixDecreaseButton"]'),
+  };
+
   this.precisionInput = this.form.$('input[name="decimalPrecisionNumber"]');
   this.exactTypeRadio = this.form.$('input[name="exactNumberType"]');
   this.decimalTypeRadio = this.form.$('input[name="decimalNumberType"]');
   this.pivotingSelect = this.form.$('select[name="pivoting"]');
-  this.matrixInput = this.form.$('matrix-input');
   this.roundingModeSelect = this.form.$('select[name="roundingMode"]');
   this.zerosRadio = this.form.$('select[name="luFlagFalse"]');
   this.luRadio = this.form.$('select[name="luFlagTrue"]');

@@ -1,6 +1,6 @@
 'use strict';
 
-/* global require exports process */
+/* global require exports process browser */
 /* eslint no-var: 0 */
 
 var paths = require('./.yo-rc.json')['generator-gulp-angular'].props.paths;
@@ -25,10 +25,17 @@ var config = {
   // protractor is called.
   specs: [paths.e2e + '/**/*.js'],
 
+  framework: 'jasmine2',
+
   // Options to be passed to Jasmine-node.
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000
+  },
+
+  onPrepare: function() {
+    browser.driver.manage().window().maximize();
+    return browser.get('/index.html');
   }
 };
 
