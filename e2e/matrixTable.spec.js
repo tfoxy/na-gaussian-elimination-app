@@ -16,6 +16,7 @@ describe('matrix table', function() {
 
   describe('input', function() {
 
+    /*
     it('changes color when focused, when it has an invalid value, and when a valid value is restored', function() {
       var input = page.getMatrixTableInput(0, 0);
       var ec, ecFn = input.getCssValue.bind(input, 'border-color');
@@ -32,6 +33,7 @@ describe('matrix table', function() {
       input.sendKeys(protractor.Key.BACK_SPACE);
       browser.driver.wait(ec, 5000, 'Valid value does not change input border color');
     });
+    */
 
     it('focuses on the next input when space is pressed', function() {
       var input = page.getMatrixTableInput(1, 1);
