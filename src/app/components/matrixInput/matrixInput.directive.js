@@ -18,9 +18,12 @@ let template = `
             class="btn btn-default btn-sm"
             ng-class="{active: vm.showCells}"
             >cells</button>
-    <button type="button" name="{{vm.inputNamePrefix}}ClearButton" ng-click="vm.clear()" class="btn btn-default btn-sm">clear</button>
-    <button type="button" name="{{vm.inputNamePrefix}}IncreaseButton" ng-click="vm.increaseMatrix()" class="btn btn-default btn-sm">+</button>
-    <button type="button" name="{{vm.inputNamePrefix}}DecreaseButton" ng-click="vm.decreaseMatrix()" class="btn btn-default btn-sm">-</button>
+    <button type="button" name="{{vm.inputNamePrefix}}ClearButton"
+        ng-click="vm.clear()" class="btn btn-default btn-sm">clear</button>
+    <button type="button" name="{{vm.inputNamePrefix}}IncreaseButton"
+        ng-click="vm.increaseMatrix()" class="btn btn-default btn-sm">+</button>
+    <button type="button" name="{{vm.inputNamePrefix}}DecreaseButton"
+        ng-click="vm.decreaseMatrix()" class="btn btn-default btn-sm">-</button>
   </div>
 </div>
 `;
