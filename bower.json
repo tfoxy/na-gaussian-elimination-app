@@ -1,12 +1,10 @@
 {
-  "name": "naGaussianEliminationApp",
-  "version": "0.0.0",
+  "name": "na-gaussian-elimination-app",
   "dependencies": {
     "angular-ui-router": ">=0.2.15",
     "bootstrap": ">=3.3.5",
     "angular": ">=1.4.2",
     "angular-elastic-input": "~2.2.0",
-    "angular-incremental-list": "~0.4.3",
     "angular-elastic": "~2.5.0",
     "angular-katex": "~0.8.2",
     "angular-ui-validate": "~1.2.0",
