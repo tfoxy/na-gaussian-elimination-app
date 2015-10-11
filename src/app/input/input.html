@@ -95,4 +95,8 @@
   </div>
 
   <button type="submit" class="btn btn-primary">Solve</button>
+
+  <span ng-show="inputForm.$error.invalidMatrixValue" class="text-danger">
+    Matrix has an invalid value
+  </span>
 </form>

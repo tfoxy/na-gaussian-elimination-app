@@ -8,7 +8,7 @@ let template = `
              name="{{vm.inputNamePrefix + '_' + rowScope.$index + ',' + $index}}"
              ng-keydown="vm.keyListener($event, this)"
              class="form-control input-sm"
-             ui-validate="{invalidValid: 'vm.isValueValid($value)'}"
+             ui-validate="{invalidMatrixValue: 'vm.isValueValid($value)'}"
              pu-elastic-input>
     </td>
   </tr>
