@@ -1,25 +1,20 @@
 function routerConfig($stateProvider, $urlRouterProvider) {
   'ngInject';
   $stateProvider
-    .state('main', {
+    .state('gaussianElimination', {
       url: '/',
       views: {
-        '': {
-          templateUrl: 'app/main/main.html',
-          controller: 'MainController',
-          controllerAs: 'mainCtrl'
-        },
-        'input@main': {
+        'input': {
           templateUrl: 'app/input/input.html',
           controller: 'InputController',
           controllerAs: 'inputCtrl'
         },
-        'solution@main': {
+        'solution': {
           templateUrl: 'app/solution/solution.html',
           controller: 'SolutionController',
           controllerAs: 'solutionCtrl'
         },
-        'steps@main': {
+        'steps': {
           templateUrl: 'app/steps/steps.html',
           controller: 'StepsController',
           controllerAs: 'stepsCtrl'

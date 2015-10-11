@@ -5,7 +5,6 @@ import numbersModule from './numbers/numbers.module.js';
 import config from './index.config.js';
 import routerConfig from './index.route.js';
 
-import MainController from './main/main.controller.js';
 import inputModule from './input/input.module.js';
 import SolutionController from './solution/solution.controller.js';
 import StepsController from './steps/steps.controller.js';
@@ -23,7 +22,6 @@ let app = angular.module('naGaussianEliminationApp', [
 ])
   .config(config)
   .config(routerConfig)
-  .controller('MainController', MainController)
   .controller('SolutionController', SolutionController)
   .controller('StepsController', StepsController);
 
