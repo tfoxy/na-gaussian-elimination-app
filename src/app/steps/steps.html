@@ -1,5 +1,5 @@
 <span class="steps-view">
-  <div ng-repeat="step in stepsCtrl.steps" ng-switch="step.type" class="solution-step">
+  <div ng-repeat="step in stepsCtrl.steps" ng-switch="step.type" class="row">
     <span ng-switch-when="matrix">
       <span katex-bind="::step.matrixLatex"></span>
     </span>

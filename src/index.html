@@ -40,11 +40,15 @@
         <p class="lead">Solve systems of linear equations, step by step.</p>
       </div>
 
-      <div ui-view="input"></div>
-      <hr>
-      <div ui-view="solution"></div>
-      <hr>
-      <div ui-view="steps"></div>
+      <div ng-if="false" class="text-muted">Loading...</div>
+
+      <div class="ng-cloak">
+        <div ui-view="input"></div>
+        <hr>
+        <div ui-view="solution"></div>
+        <hr>
+        <div ui-view="steps"></div>
+      </div>
 
     </div> <!-- /container -->
 
