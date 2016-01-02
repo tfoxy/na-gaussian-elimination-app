@@ -1,5 +1,5 @@
 <form name="inputForm"
-      ng-submit="inputCtrl.submit()"
+      ng-submit="inputForm.$valid && inputCtrl.submit()"
       ng-keydown="inputCtrl.keydownListener($event)"
       class="input-view"
   >
