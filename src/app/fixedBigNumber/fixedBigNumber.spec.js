@@ -31,21 +31,21 @@ describe('FixedBigNumber', () => {
 
   describe('#div(n)', () => {
 
-    it('returns the same amount of digits as the precision' +
-      ', when result has an integer part', () => {
-        let FixedBigNumber = createFixedBigNumberClass(5);
-        let result = new FixedBigNumber('1000').div('3');
+    it('returns the same amount of digits as the precision,' +
+    ' when result has an integer part', () => {
+      let FixedBigNumber = createFixedBigNumberClass(5);
+      let result = new FixedBigNumber('1000').div('3');
 
-        expect(result.toString()).to.equal('333.33');
-      });
+      expect(result.toString()).to.equal('333.33');
+    });
 
     it('returns the same amount of digits as the precision,' +
-      ' when precision is greater than default DECIMAL_PLACES', () => {
-        let FixedBigNumber = createFixedBigNumberClass(50);
-        let result = new FixedBigNumber('1000').div('3');
+    ' when precision is greater than default DECIMAL_PLACES', () => {
+      let FixedBigNumber = createFixedBigNumberClass(50);
+      let result = new FixedBigNumber('1000').div('3');
 
-        expect(result.toString()).to.have.length(51);
-      });
+      expect(result.toString()).to.have.length(51);
+    });
 
   });
 
