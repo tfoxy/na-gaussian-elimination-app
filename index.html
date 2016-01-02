@@ -1,3 +1,12 @@
-<!doctype html><html ng-app="naGaussianEliminationApp" ng-strict-di=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Solve systems of linear equations, step by step."><meta name="author" content="Tomás Fox"><link rel="icon" type="image/png" href="./favicon.png"><link rel="apple-itouch-icon" href="./favicon.png"><title>Gaussian Elimination</title><link rel="stylesheet" href="styles/vendor-3ac1f9fb86.css"><link rel="stylesheet" href="styles/app-9c9cc47a18.css"></head><body><!--[if lt IE 10]>
+<!doctype html><html ng-app="naGaussianEliminationApp" ng-strict-di=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Solve systems of linear equations, step by step."><meta name="author" content="Tomás Fox"><link rel="icon" type="image/png" href="./favicon.png"><link rel="apple-itouch-icon" href="./favicon.png"><title>Gaussian Elimination</title><link rel="stylesheet" href="styles/vendor-3ac1f9fb86.css"><link rel="stylesheet" href="styles/app-920a739244.css"></head><body><!--[if lt IE 10]>
  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
- <![endif]--><div class="container"><div class="page-header"><h1>Gaussian Elimination</h1><p class="lead">Solve systems of linear equations, step by step.</p></div><div ui-view=""></div></div><script src="scripts/vendor-6add7015ec.js"></script><script src="scripts/app-77d5c3fef3.js"></script></body></html>
+ <![endif]--><div class="container"><div class="page-header"><h1>Gaussian Elimination</h1><p class="lead">Solve systems of linear equations, step by step.</p></div><div ng-if="false" class="text-muted">Loading...</div><div class="ng-cloak"><div ui-view="input"></div><hr><div ui-view="solution"></div><hr><div ui-view="steps"></div></div></div><script src="scripts/vendor-6add7015ec.js"></script><script src="scripts/app-dee35c3878.js"></script><script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-71902554-1', 'auto');
+      ga('send', 'pageview');
+
+      </script></body></html>
