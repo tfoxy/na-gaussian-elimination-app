@@ -9,10 +9,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tfoxy/angular-katex"
+    "url": "https://github.com/tfoxy/na-gaussian-elimination-app"
   },
   "bugs": {
-    "url": "https://github.com/tfoxy/angular-katex/issues"
+    "url": "https://github.com/tfoxy/na-gaussian-elimination-app/issues"
   },
   "devDependencies": {
     "babel-core": "~5.8.23",
@@ -75,5 +75,6 @@
     "node": ">=0.10.0"
   },
   "author": "Tomás Fox <tomas.c.fox@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "private": true
 }
