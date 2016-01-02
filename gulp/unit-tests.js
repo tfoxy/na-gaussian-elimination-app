@@ -6,13 +6,14 @@ var gulp = require('gulp');
 var karma = require('karma');
 
 function runTests(singleRun, done) {
-  karma.server.start({
+  var server = new karma.Server({
     configFile: path.join(__dirname, '/../karma.conf.js'),
     singleRun: singleRun,
     autoWatch: !singleRun
   }, function(failCount) {
     done(failCount ? new Error('Failed ' + failCount + ' tests.') : null);
   });
+  server.start();
 }
 
 gulp.task('test', ['scripts:test'], function(done) {
